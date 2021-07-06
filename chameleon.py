@@ -5,8 +5,6 @@ from modules import *
 import re
 
 
-
-
 class Chameleon:
 
     def __init__(self):
@@ -49,14 +47,14 @@ class Chameleon:
     def show_banner(self):
         with open('banner.txt', 'r') as f:
             data = f.read()
-            print("\033[92m%s\033[0;0m" % data)
+            # print("\033[92m%s\033[0;0m" % data)
 
     def run(self, args):
         if args.redelk:
             fileout=open("/var/log/redelk/redteamdomaincheck.txt","a+")
             print("\033[1;34m[-] Checking local RedELK file /etc/redelk/roguedomains.conf\033[0;0m")
             fileroguedomains=open("/etc/redelk/roguedomains.conf","r")
-            print("[-] Checking category for " + args.domain)
+            # print("[-] Checking category for " + args.domain)
             for line in fileroguedomains:
                 if re.search(args.domain, line):
                     words = re.split('#', line)
